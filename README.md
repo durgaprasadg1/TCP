@@ -1,3 +1,8 @@
+TO RUN 
+npm ci
+npm run dev
+
+
 # Computation Workbench
 
 An interactive Theory of Computation laboratory. It runs **real** pushdown automata (PDA) and Turing machines (TM), shows every configuration step by step, lets you build and validate your own machines, and runs an edge-case test suite against the engines.

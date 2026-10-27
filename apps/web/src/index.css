@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --paper: #EBE2CC;
+  --paper-raised: #DED6C1;
+  --paper-muted: #CFC6B1;
+  --stone: #B7B09E;
+  --ink: #302d26;
+  --ink-soft: #514b40;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  @apply font-sans antialiased;
+}
+
+/* Visible keyboard focus everywhere. */
+:focus-visible {
+  @apply outline outline-2 outline-offset-2;
+  outline-color: #514b40;
+}
+
+@layer components {
+  .card {
+    background: #F3EDDF;
+    border: 1px solid var(--stone);
+    @apply min-w-0 rounded-lg;
+    box-shadow: 0 1px 2px rgb(48 45 38 / 5%);
+  }
+  .card-title {
+    color: var(--ink-soft);
+    @apply text-xs font-semibold uppercase tracking-wider;
+  }
+  .btn {
+    background: #DED6C1; color: #302d26; border: 1px solid #B7B09E;
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-semibold transition-colors hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .btn-primary {
+    background: #514b40; color: #F3EDDF; border-color: #302d26;
+  }
+  .btn-danger {
+    @apply border-red-800 bg-red-100 text-red-950 hover:bg-red-200;
+  }
+  .btn-icon {
+    @apply px-2;
+  }
+  .input {
+    background: #FBF8F0; color: #302d26; border: 1px solid #8E8777;
+    @apply w-full rounded-md px-2.5 py-1.5 font-mono text-sm placeholder:text-stone-600;
+  }
+  .input option { background: #FBF8F0; color: #302d26; }
+  .label {
+    color: #302d26;
+    @apply mb-1 block text-xs font-bold;
+  }
+  .th {
+    color: #514b40;
+    @apply px-2 py-1.5 text-left text-xs font-semibold uppercase tracking-wider;
+  }
+  .td {
+    color: #302d26;
+    @apply px-2 py-1.5 font-mono text-sm;
+  }
+}
+
+/* React Flow: dark theme and centered invisible handles (edges are drawn centre to centre). */
+.react-flow {
+  --xy-background-color: #F3EDDF;
+  --xy-attribution-background-color: transparent;
+}
+.react-flow__attribution {
+  display: none;
+}
+.react-flow__handle.cw-handle {
+  opacity: 0;
+  pointer-events: none;
+  left: 50%;
+  top: 50%;
+  width: 1px;
+  height: 1px;
+  min-width: 0;
+  min-height: 0;
+  border: 0;
+  transform: translate(-50%, -50%);
+}
+.react-flow__controls-button {
+  background: #DED6C1;
+  border-color: #B7B09E;
+  fill: #302d26;
+}
+.react-flow__controls-button:hover {
+  background: #CFC6B1;
+}
